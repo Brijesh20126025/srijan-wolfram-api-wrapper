@@ -41,11 +41,7 @@ Once run the gulp make sure there is not any compilation error during the gulp.
 node dist\bin\www.js
 
 once you run the above command in terminal you will see a message on a console ---- Listening on port 9215 ----
-
-Go to the postman and type http://localhost:9215/ 
-
-you will get a message in response saying first you need to sign up once you vistit the url --
-
+first go to this url and create a user after sucess you will get a token for future request.
 http://localhost:9215/signup 
 
 you will have to give the userName & passoword then you will receive a token you need this token 
