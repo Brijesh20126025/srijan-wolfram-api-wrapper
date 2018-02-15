@@ -1,9 +1,19 @@
-import { wolframAlpha } from './srijan-Wolfram-Alpha-Api/wolfram-alpha-api'
+import { wolframAlpha } from './modules/srijan-Wolfram-Alpha-Api-wrapper/wolfram-alpha-api'
 import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as path from 'path';
-import cookieParser = require('cookie-parser'); 
+import { appId } from './modules/config/config';
+import { createJwtTokenForUser } from './modules/sign-up/signup';
+import { callSrijanWolframWrapper } from './modules/helper-call-srijan-wrapper-wolfram-api/helper-caller';
+import { validateUser } from './modules/validate-user/validateUser'
+import cookieParser = require('cookie-parser');
+
+let app: express.Express = express();
+// new wolframAlpha(appId).query('how far is sun from earth', (err, res) => {
+//     console.log(err);
+//     console.log(res);
+// });
 
 app.use(logger('dev'));
 app.use(bodyParser.json({
@@ -21,7 +31,8 @@ app.use(bodyParser.urlencoded(data));
 app.use(cookieParser());
 
 
-app.use('/', )
+app.use('/signUp', createJwtTokenForUser);
 
+app.use('/search/:query', validateUser, callSrijanWolframWrapper);
 
-export default app;
+export { app };
