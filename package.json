@@ -1,5 +1,5 @@
 {
-  "name": "srijan",
+  "name": "srijan-wolfram-api-wrapper",
   "version": "0.0.0",
   "description": "wolfram-wrapper",
   "main": "index.js",
@@ -13,27 +13,17 @@
   },
   "typings": "dist/index.d.ts",
   "dependencies": {
-    "async": "2.6.0",
     "body-parser": "1.18.2",
     "cookie-parser": "1.4.3",
-    "csvtojson": "1.1.9",
     "deferred": "0.7.8",
     "del": "^3.0.0",
     "express": "4.16.2",
     "gulp-typescript": "3.2.3",
-    "json2csv": "3.11.5",
     "jsonwebtoken": "8.1.1",
-    "libxmljs": "0.18.7",
     "merge2": "^1.1.0",
-    "mongodb": "2.2.33",
-    "mongoose": "4.12.1",
     "morgan": "1.9.0",
-    "mysql": "2.15.0",
     "path": "0.12.7",
-    "pipes-and-filters": "0.0.4",
-    "squel": "^5.10.0",
-    "underscore": "^1.8.3",
-    "wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
+    "pipes-and-filters": "0.0.4"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
