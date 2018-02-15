@@ -1,8 +1,8 @@
 import { app } from '../app';
-import * as debugModule from 'debug';
+//import * as debugModule from 'debug';
 import * as http from 'http';
 
-const debug = debugModule('node-express-typescript:server');
+//const debug = debugModule('node-express-typescript:server');
 
 // Get port from environment and store in Express.
 //process.env.PORT ||
