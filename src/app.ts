@@ -6,8 +6,8 @@ import * as path from 'path';
 import { appId } from './modules/config/config';
 import { createJwtTokenForUser } from './modules/sign-up/signup';
 import { callSrijanWolframWrapper } from './modules/helper-call-srijan-wrapper-wolfram-api/helper-caller';
-import { validateUser } from './modules/validate-user/validateUser'
-import cookieParser = require('cookie-parser');
+import { validateUser } from './modules/validate-user/validateUser';
+const cookieParser = require('cookie-parser');
 
 let app: express.Express = express();
 // new wolframAlpha(appId).query('how far is sun from earth', (err, res) => {
@@ -34,5 +34,28 @@ app.use(cookieParser());
 app.use('/signUp', createJwtTokenForUser);
 
 app.use('/search/:query', validateUser, callSrijanWolframWrapper);
+
+app.get('/', (req, res) => {
+    res.send({ err: false, message: 'Welcome to Srijan wolfram alpha api wrapper Please sign up for querying' });
+    return;
+})
+
+app.post('/', (req, res) => {
+    res.send({ err: false, message: 'Welcome to Srijan wolfram alpha api wrapper Please sign up for querying' });
+    return
+})
+
+// Handle 404 
+app.use((req, res, next) => {
+    //This is our custom error message.
+    // If raising error from within the app, we will have to set up error.status
+    let err = {
+        message: 'Not Found',
+        status: 404
+    };
+    res.send(err);
+    next(err);
+    return;
+});
 
 export { app };

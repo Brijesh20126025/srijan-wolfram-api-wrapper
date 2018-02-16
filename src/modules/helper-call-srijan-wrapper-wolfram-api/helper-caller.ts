@@ -15,7 +15,7 @@ export async function callSrijanWolframWrapper(req: express.Request, res: expres
         if (queryRes.err) {
             console.error("Error while call wolfram core API");
             console.log(JSON.stringify(queryRes.err));
-            res.send({ err: true, result: { message: 'while call wolfram core API try after some times!!!', data: null } });
+            res.send({ err: true, result: { message: 'while calling wolfram core API try after some times!!!', data: null } });
             return;
         }
         if (typeof queryRes.result === 'object') {
@@ -43,6 +43,10 @@ export async function callSrijanWolframWrapper(req: express.Request, res: expres
                     data: { xmlResult: xmlResult, jsonResult: jsonResult }
                 }
             });
+            return;
+        }
+        else {
+            res.send({ err: false, result: 'could not found data' });
             return;
         }
     } catch (ex) {

@@ -161,7 +161,13 @@ export class wolframAlpha {
                             jsonResult = jsonRes;
                             resolve({ err: null, result: { xmlResult: xmlResult, jsonResult: JSON.parse(jsonResult) } });
                             return;
-                        })  
+                        })
+                        .catch((ex) => {
+                            console.error("Exception during the getting data from wolfram");
+                            console.log(JSON.stringify(ex));
+                            resolve({ err: ex, result: null });
+                            return;
+                        })
                 })
                 .catch((ex) => {
                     console.error("Error while getting the data from wolfram api : " + JSON.stringify(ex));
