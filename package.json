@@ -1,6 +1,6 @@
 {
   "name": "srijan-wolfram-api-wrapper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "wolfram-wrapper",
   "main": "index.js",
   "scripts": {
