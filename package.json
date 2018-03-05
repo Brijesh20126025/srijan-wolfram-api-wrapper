@@ -1,8 +1,8 @@
 {
   "name": "srijan-wolfram-api-wrapper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "wolfram-wrapper",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "run": "node app.js"
   },
