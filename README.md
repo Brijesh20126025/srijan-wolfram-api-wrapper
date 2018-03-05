@@ -81,7 +81,7 @@ npm install srijan-wolfram-api-wrapper
 ```javascript
 const swapi = require('srijan-wolfram-api-wrapper')
 
-let wrapperApi : any = new swapi('YOUR-WOLFRAM-APPID');
+let wrapperApi : any = new swapi.wolframAlpha('YOUR-WOLFRAM-APPID');
 
 let queryResult : {err : any, result : {xmlResult : any , jsonResult : any}} = await wrapperApi.query('integrate x^2');
 
