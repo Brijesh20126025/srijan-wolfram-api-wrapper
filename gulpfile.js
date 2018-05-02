@@ -4,7 +4,7 @@ var tsc = require('gulp-typescript');
 var tsProject = tsc.createProject('tsconfig.json', { noImplicitAny: false });
 var config = require('./gulpConfig');
 var merge = require('merge2');
-var del = require('del');
+var del = require('del')
 
 //We should delete the dist folder everytime before building
 gulp.task('compile-all', function () {
